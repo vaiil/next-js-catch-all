@@ -11,13 +11,13 @@ function getRouteRegex(normalizedRoute) {
         '/([^/]+?)'));
     const groupNames = Object.keys(groups);
     const lastGroup = groupNames[groupNames.length - 1];
-    if (lastGroup && lastGroup[lastGroup.length - 1] === '*') {
+    if (lastGroup && lastGroup.slice(-3) === '...') {
         parameterizedRoute =
             parameterizedRoute.slice(0, parameterizedRoute.lastIndexOf('([^/]+?)')) +
                 '(.*)';
         const value = groups[lastGroup];
         delete groups[lastGroup];
-        groups[lastGroup.slice(0, -1)] = value;
+        groups[lastGroup.slice(0, -3)] = value;
     }
     return {
         re: new RegExp('^' + parameterizedRoute + '(?:/)?$', 'i'),

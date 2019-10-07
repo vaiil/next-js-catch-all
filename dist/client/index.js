@@ -3,7 +3,7 @@
 // depends on Promise.
 // So, we need to polyfill it.
 // See: https://webpack.js.org/guides/code-splitting/#dynamic-imports
-if(!window.Promise){window.Promise=_promise.default;}const data=JSON.parse(document.getElementById('__NEXT_DATA__').textContent);window.__NEXT_DATA__=data;const version="9.0.9-canary.0";exports.version=version;const{props,err,page,query,buildId,assetPrefix,runtimeConfig,dynamicIds}=data;const d=JSON.parse(window.__NEXT_DATA__.dataManager);const dataManager=new _dataManager.DataManager(d);exports.dataManager=dataManager;const prefix=assetPrefix||'';// With dynamic assetPrefix it's no longer possible to set assetPrefix at the build time
+if(!window.Promise){window.Promise=_promise.default;}const data=JSON.parse(document.getElementById('__NEXT_DATA__').textContent);window.__NEXT_DATA__=data;const version="9.0.9-canary.1-with-catch-all";exports.version=version;const{props,err,page,query,buildId,assetPrefix,runtimeConfig,dynamicIds}=data;const d=JSON.parse(window.__NEXT_DATA__.dataManager);const dataManager=new _dataManager.DataManager(d);exports.dataManager=dataManager;const prefix=assetPrefix||'';// With dynamic assetPrefix it's no longer possible to set assetPrefix at the build time
 // So, this is how we do it in the client side at runtime
 __webpack_public_path__=prefix+"/_next/";//eslint-disable-line
 // Initialize next/config with the environment configuration
